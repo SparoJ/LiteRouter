@@ -1,4 +1,5 @@
 apply plugin: 'java-library'
+apply plugin: 'com.novoda.bintray-release'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -6,3 +7,40 @@ dependencies {
 
 sourceCompatibility = "1.7"
 targetCompatibility = "1.7"
+
+publish {
+    repoName = "maven"
+    userOrg = 'SparoJ'
+    groupId = 'com.sparoj.literouter'
+    artifactId = 'annotation'
+    publishVersion = '1.0.0'
+    desc = 'router annotation part'
+    website = 'https://github.com/SparoJ/LiteRouter.git'
+}
+
+//ext {
+//    bintrayRepo = 'maven'
+//    bintrayName = 'lite-router-annotation'
+//
+//    publishedGroupId = 'com.sparoj.literouter'
+//    libraryName = 'Annotation'
+//    artifact = 'annotation'
+//
+//    libraryDescription = 'LiteRouter'
+//
+//    siteUrl = 'https://github.com/SparoJ/LiteRouter/'
+//    gitUrl = 'https://github.com/SparoJ/LiteRouter.git'
+//
+//    libraryVersion = '1.0.0'
+//
+//    developerId = 'sparoJ'
+//    developerName = 'SparoJ'
+//    developerEmail = 'sdhchn@gmail.com'
+//
+//    licenseName = 'The Apache Software License, Version 2.0'
+//    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+//    allLicenses = ["Apache-2.0"]
+//}
+//
+//apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+//apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
