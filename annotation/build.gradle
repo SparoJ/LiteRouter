@@ -10,7 +10,7 @@ targetCompatibility = "1.7"
 
 publish {
     repoName = "maven"
-    userOrg = 'SparoJ'
+    userOrg = 'sparoj'
     groupId = 'com.sparoj.literouter'
     artifactId = 'annotation'
     publishVersion = '1.0.0'

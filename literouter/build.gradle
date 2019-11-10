@@ -31,7 +31,7 @@ dependencies {
 
 publish {
     repoName = "maven"
-    userOrg = 'SparoJ'
+    userOrg = 'sparoj'
     groupId = 'com.sparoj.literouter'
     artifactId = 'literouter'
     publishVersion = '1.0.0'
