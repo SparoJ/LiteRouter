@@ -1,1 +1,1 @@
-include ':app', ':literouter', ':face', ':annotation', ':compile'//, ':stub', ':rx'
+include ':app', ':literouter', ':face', ':annotation', ':compile', ':stub'//, ':rx'
