@@ -30,13 +30,14 @@ dependencies {
 
 
 publish {
-    repoName = "maven"
-    userOrg = 'sparoj'
-    groupId = 'com.sparoj.literouter'
-    artifactId = 'literouter'
+    artifactId = 'literouter'//  # artifactId
+    uploadName = 'LiteRouter'// ## 展示名字
     publishVersion = '1.0.0'
-    desc = 'router api part'
-    website = 'https://github.com/SparoJ/LiteRouter.git'
+    userOrg = rootProject.userOrg
+    groupId = rootProject.groupId
+    desc = rootProject.description
+    website = rootProject.website
+    licences = rootProject.licences
 }
 
 //

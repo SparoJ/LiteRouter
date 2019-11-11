@@ -9,13 +9,21 @@ sourceCompatibility = "1.7"
 targetCompatibility = "1.7"
 
 publish {
-    repoName = "maven"
-    userOrg = 'sparoj'
-    groupId = 'com.sparoj.literouter'
-    artifactId = 'annotation'
+    artifactId = 'annotation'//  # artifactId
+    uploadName = 'LiteRouter'// ## 展示名字
     publishVersion = '1.0.0'
-    desc = 'router annotation part'
-    website = 'https://github.com/SparoJ/LiteRouter.git'
+    userOrg = rootProject.userOrg
+    groupId = rootProject.groupId
+    desc = rootProject.description
+    website = rootProject.website
+    licences = rootProject.licences
+//    repoName = "maven"
+//    userOrg = 'sparoj'
+//    groupId = 'com.sparoj.literouter'
+//    artifactId = 'annotation'
+//    publishVersion = '1.0.0'
+//    desc = 'router annotation part'
+//    website = 'https://github.com/SparoJ/LiteRouter.git'
 }
 
 //ext {
