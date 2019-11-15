@@ -12,6 +12,9 @@ import com.sparoj.literouter.RouterCallback;
 import com.sparoj.literouter.RouterRequest;
 import com.sparoj.literouter.RouterResponse;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.Map;
 
 /**
@@ -53,6 +56,12 @@ public class RouterDemoActivity extends AppCompatActivity {
 //                Log.e("RouterDemoActivity", "onClick(RouterDemoActivity.java:48)" + map.get("FaceAction"));
 //            }
 //        });
+        final JSONObject obj = new JSONObject();
+        try {
+            obj.put("key", "str");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
         //同步
         findViewById(R.id.btn_face_sync).setOnClickListener(new View.OnClickListener() {
@@ -62,9 +71,12 @@ public class RouterDemoActivity extends AppCompatActivity {
                                                                     Log.e("RouterDemoActivity", "onClick(RouterDemoActivity.java:62)" + Thread.currentThread());
                                                                      LiteRouter.getInstance().call((new RouterRequest
                                                                             .Builder()
-                                                                            .toModule("face")
-                                                                            .routerAction("FaceAction")
+                                                                             .toModuleAction("face/FaceAction")
+//                                                                            .toModule("face")
+//                                                                            .routerAction("FaceAction")
                                                                             .wrapData("face", "router hia")
+                                                                             .wrapJson(obj.toString())
+                                                                             .wrapJSONObject(obj)
                                                                             .wrapObj(new EmptyAction())
                                                                             .build())).enqueue(new RouterCallback() {
                                                                         @Override

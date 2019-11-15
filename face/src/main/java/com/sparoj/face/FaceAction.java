@@ -27,13 +27,15 @@ public class FaceAction implements RouterAction {
             e.printStackTrace();
         }
         Log.e("FaceAction", "router(FaceAction.java:28)" + Thread.currentThread());
-        String targetModule = request.getTargetModule();
-        Log.e("FaceAction", "router(FaceAction.java:18)targetModule!!!" + targetModule);
+        String moduleAction = request.getModuleAction();
+        Log.e("FaceAction", "router(FaceAction.java:18)moduleAction!!!" + moduleAction);
         Map map = request.getWrapMap();
         String face = (String) map.get("face");
         Log.e("FaceAction", "router(FaceAction.java:25)map data!!!" + face);
         EmptyAction wrapObj = (EmptyAction) request.getWrapObj();
         Log.e("FaceAction", "router(FaceAction.java:35)" + wrapObj.getActionName());
+        Log.e("FaceAction", "router(FaceAction.java:37)" + request.getJson());
+        Log.e("FaceAction", "router(FaceAction.java:38)" + request.getJSONObj());
         HashMap<String, String> responseMap = new HashMap<>();
         responseMap.put(getActionName(), "face action");
         return new RouterResponse().code("200")

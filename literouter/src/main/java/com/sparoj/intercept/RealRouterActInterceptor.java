@@ -1,5 +1,7 @@
 package com.sparoj.intercept;
 
+import android.text.TextUtils;
+
 import com.sparoj.literouter.EmptyAction;
 import com.sparoj.literouter.RouterAction;
 import com.sparoj.literouter.RouterModule;
@@ -14,6 +16,8 @@ import java.util.Map;
  */
 
 public class RealRouterActInterceptor implements RouterInterceptor {
+
+    public static final int ROUTER_MODULE_PARAM_LENGTH = 2;
     @Override
     public RouterResponse intercept(Chain chain) {
         RouterInterceptorChain routerChain = (RouterInterceptorChain) chain;
@@ -38,11 +42,28 @@ public class RealRouterActInterceptor implements RouterInterceptor {
 
 
     private RouterAction findRouterAction(Map<String, RouterModule> routerMap, RouterRequest request) {
-
-        RouterModule module = routerMap.get(request.getTargetModule());
+        String[] paramArr = parseRouterModule(request);
+        String targetModule = paramArr[0];
+        String targetAction = paramArr[1];
+        // request.getTargetModule()
+        RouterModule module = routerMap.get(targetModule);
         if (module != null) {
-            return module.findRouterAction(request.getRouterAction());
+            // request.getRouterAction()
+            return module.findRouterAction(targetAction);
         }
         return new EmptyAction();
+    }
+
+    private String[] parseRouterModule(RouterRequest request) {
+        String moduleAction = request.getModuleAction();
+        if (TextUtils.isEmpty(moduleAction)) {
+            throw new IllegalArgumentException("router module and action should not be null");
+        }
+        String[] split = moduleAction.split("/");
+        // module & action
+        if (split.length != ROUTER_MODULE_PARAM_LENGTH) {
+            throw new IllegalArgumentException("parse module and action string error, check your routerAction string first!");
+        }
+        return split;
     }
 }
