@@ -3,7 +3,7 @@
 ext {
     userOrg = 'sparoj' // #用户名
     repoName = "maven" // #仓库名
-    groupId = 'com.sparoj.literouter'//  #groupId
+    groupId = 'com.sparoj'//  #groupId .literouter
     desc = 'lite router for moudles' // #描述
     website = 'https://github.com/SparoJ/LiteRouter.git'// #地址，填写真实可访问地址
     licences = ['Apache-2.0'] // # 描述，填写licences

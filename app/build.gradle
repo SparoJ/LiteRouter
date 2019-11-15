@@ -23,10 +23,11 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.android.support:appcompat-v7:26.1.0'
 
     annotationProcessor project(':compile')
-    compile project(':literouter')
-    compile project(':face')
+    implementation project(':literouter')
+    implementation project(':face')
+    implementation project(':annotation')
 }
