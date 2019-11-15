@@ -11,7 +11,7 @@ targetCompatibility = "1.7"
 publish {
     artifactId = 'annotation'//  # artifactId
     uploadName = 'LiteRouter'// ## 展示名字
-    publishVersion = '1.0.1'
+    publishVersion = '1.0.2'
     userOrg = rootProject.userOrg
     groupId = rootProject.groupId
     desc = rootProject.desc
